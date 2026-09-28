@@ -1,0 +1,114 @@
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #04050a;
+  overflow: hidden;
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace;
+}
+
+canvas#app {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  outline: none;
+  touch-action: none;
+}
+
+#hud {
+  position: fixed;
+  left: 16px;
+  bottom: 14px;
+  color: #e9e1cc;
+  font-size: 12px;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px #000, 0 0 6px #000;
+  pointer-events: none;
+  user-select: none;
+}
+
+#hud .title {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: #ffcf86;
+}
+
+#hud kbd {
+  display: inline-block;
+  padding: 0 5px;
+  border: 1px solid #8a7a5c;
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: rgba(20, 16, 12, 0.6);
+  font: inherit;
+  color: #fff3d8;
+}
+
+#fps {
+  color: #9fb3d9;
+}
+
+#loading {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #d8ceb4;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  background: #04050a;
+  transition: opacity 0.6s ease;
+}
+
+#loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.no-ui #hud,
+body.no-ui .lil-gui {
+  display: none;
+}
+
+/* sprite debug page */
+body.debug-page {
+  overflow: auto;
+  background: #2a2c34;
+}
+
+.sprite-debug {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 18px;
+  align-items: flex-start;
+}
+
+.sprite-debug figure {
+  margin: 0;
+  padding: 8px;
+  background: #3a3d48;
+  border-radius: 4px;
+}
+
+.sprite-debug canvas {
+  image-rendering: pixelated;
+  display: block;
+  background: repeating-conic-gradient(#4a4d58 0% 25%, #54575f 0% 50%) 50% / 16px 16px;
+}
+
+.sprite-debug figcaption {
+  color: #d8d8e0;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #loading {
+    transition: none;
+  }
+}
